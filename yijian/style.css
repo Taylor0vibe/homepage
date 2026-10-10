@@ -53,3 +53,18 @@
 @media(max-width:620px){.look-tools{gap:4px}.look-tweaks{gap:0}.look-tweaks button{padding:0 7px}.look-tool-icons{gap:0}}
 
 .warm-layer-note{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--green);margin:14px 0}.warm-layer-note .ico{width:14px;height:14px}.warm-layer-note .edit{margin-left:auto;min-height:36px}
+
+/* A compact brand strip: live text stays legible at every viewport size. */
+:root{--app-header-height:112px}
+.header{height:var(--app-header-height);gap:24px;margin:0;width:100%;overflow:hidden;background:#f7f3ec;padding:0 5%;isolation:isolate}
+.header-art{position:absolute;top:0;right:0;bottom:0;width:44%;overflow:hidden;opacity:.27;pointer-events:none;mask-image:linear-gradient(to right,transparent,#000 48%);-webkit-mask-image:linear-gradient(to right,transparent,#000 48%)}
+.header-art img{position:absolute;right:0;top:50%;width:185%;max-width:none;height:auto;transform:translateY(-50%)}
+.header>.brand,.header>.header-slogan,.header>nav,.header>.header-tools{position:relative;z-index:1}
+.header .brand{flex-shrink:0;gap:11px;font-size:26px;letter-spacing:2px}
+.header-slogan{margin:0;font-size:21px;letter-spacing:1px;font-weight:450;line-height:1.5;white-space:nowrap;color:#756355}
+.header nav{margin-left:auto;gap:28px;flex-shrink:0}.header nav button{color:#766e63}.header nav button.active{color:var(--ink)}
+.header-tools{flex-shrink:0}.header .device-toggle{background:#fffaf5f5}
+.scene-tabs{top:var(--app-header-height)}
+@media(max-width:1100px){.header{gap:16px}.header-slogan{font-size:17px;letter-spacing:.5px}.header nav{gap:20px}.header .brand{font-size:24px}.header .device-toggle{padding:8px 10px;font-size:11px}}
+@media(max-width:900px){:root{--app-header-height:94px}.header{gap:10px}.header .brand{font-size:22px;gap:8px}.header-slogan{font-size:14px;letter-spacing:.5px}.header nav{gap:12px}.header nav button{font-size:12px}.header .device-toggle{padding:7px 8px;gap:4px;font-size:10px}.header .device-toggle .ico{width:15px;height:15px}}
+@media(max-width:620px){:root{--app-header-height:82px}.header{padding:0 18px;gap:12px;justify-content:flex-start}.header .brand{font-size:23px;gap:9px}.header-slogan{font-size:clamp(12px,3.5vw,15px);letter-spacing:.2px}.header-art{width:42%;opacity:.21}.header-tools{margin-left:auto}.header nav{display:none}.scene-tabs{top:var(--app-header-height)}}
